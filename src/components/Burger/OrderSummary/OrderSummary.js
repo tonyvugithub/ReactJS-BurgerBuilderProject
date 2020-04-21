@@ -20,7 +20,7 @@ class orderSummary extends Component {
         <p>A delicious burger with the following ingredients</p>
         <ul>{ingredientSummary}</ul>
         <p>
-          <strong>Total: ${this.props.totalDue.toFixed(2)}</strong>
+          <strong>Total: ${this.props.totalDue}</strong>
         </p>
         <p>Continue to Checkout?</p>
         <Button btnType="Cancel" onclick={this.props.onOrderCanceled}>

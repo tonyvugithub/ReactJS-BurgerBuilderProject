@@ -1,40 +1,35 @@
-import * as actionTypes from './actionTypes';
-import axiosInstance from "../../axios-orders";
+import * as actionTypes from "./actionTypes";
 
-export const increaseIngredient=(ingredientName) => {
+export const increaseIngredient = (ingredientName) => {
   return {
     type: actionTypes.INCREASE_INGREDIENT,
-    ingredientName: ingredientName
-  }
+    ingredientName: ingredientName,
+  };
 };
 
-export const decreaseIngredient=(ingredientName) => {
+export const decreaseIngredient = (ingredientName) => {
   return {
     type: actionTypes.DECREASE_INCREDIENT,
-    ingredientName: ingredientName
-  }
+    ingredientName: ingredientName,
+  };
 };
 
-export const setIngredients = (ingredients) =>{
+export const setIngredients = (ingredients) => {
   return {
     type: actionTypes.SET_INGREDIENTS,
-    ingredients: ingredients
-  }
-}
+    ingredients: ingredients,
+  };
+};
 
 export const fetchIngredientFailed = () => {
   return {
     type: actionTypes.FETCH_INGREDIENTS_FAILED,
-  }
-}
+  };
+};
 
+//DEBUG tmr
 export const initIngredients = () => {
-  return dispatch => {
-    axiosInstance
-    .get("https://react-burger-builder-a2dd3.firebaseio.com/ingredients.json")
-    .then(res => {
-      dispatch(setIngredients(res.data));
-    })
-    .catch(err => dispatch(fetchIngredientFailed()));
+  return {
+    type: actionTypes.INIT_INGREDIENTS
   }
-}
+};

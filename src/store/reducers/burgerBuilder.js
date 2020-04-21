@@ -9,7 +9,7 @@ const INGREDIENT_PRICES = {
 };
 
 const initialState = {
-  ingredients: {},
+  ingredients: null,
   totalPrice: 4,
   error: false,
   building: false
@@ -56,7 +56,7 @@ const setIngredients = (state,action) => {
       meat: action.ingredients.meat,
     },
     //When you initially set the ingredients on root page, the totalPrice need to be updated to the initial state of 4$
-    totalPrice: initialState.totalPrice,
+    totalPrice: 4,
     error: false,
     building: false
   })

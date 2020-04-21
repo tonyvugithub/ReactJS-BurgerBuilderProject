@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+
 import axiosInstance from "../../axios-orders";
 import Aux from "../../hoc/Auxilliary/Auxilliary";
 import Burger from "../../components/Burger/Burger";
@@ -71,10 +72,10 @@ export class BurgerBuilder extends Component {
             handleIncrease={this.props.onIncreaseIngredient}
             handleDecrease={this.props.onDecreaseIngredient}
             btnDisabled={isDisabled}
-            dueTotal={this.props.totalPrice}
             enableOrderBtn={this.updateOrderState(this.props.ingredients)}
             handleOrderBtnClick={this.orderBtnClickHandler}
             isAuthenticated={this.props.isAuthenticated}
+            dueTotal={this.props.totalPrice}
           />
         </Aux>
       );
